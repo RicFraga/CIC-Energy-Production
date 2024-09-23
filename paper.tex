@@ -5,27 +5,25 @@
 \usepackage{hyperref} % Para enlaces y referencias cruzadas
 \usepackage{booktabs}
 \usepackage{geometry}
-\usepackage{float}
+\usepackage{authblk}
+\usepackage{float} 
 \usepackage{array}
 \usepackage{geometry} % Para ajustar márgenes
 \geometry{margin=1in} % Márgenes de 1 pulgada
 
-\title{Time Series Analysis and LSTM-based Models Comparission Using Solar Photovoltaic Electricity
-Generation at CIC-IPN in North of Mexico City}
-\author{P.J Escamilla Ambrosio\\
-        \textit{Centro de Investigación en Computación}\\
-        \and
-        R. Alcaraz Fraga\\
-        \textit{Escuela Superior de Física y Matemáticas}\\
-        }
-\date{\today}
-
 \begin{document}
+\title{Comparison of Time Series Models of Solar Photovoltaic Electricity Generation in North of Mexico City}
+\author{Ponciano J. Escamilla-Ambrosio\textsuperscript{1}[0000-1111-2222-3333]}
+\author{Ricardo Alcaraz-Fraga\textsuperscript{2}}
+\author{Gilberto L. Martinez-Luna\textsuperscript{1}[0000-0002-0105-1112]}
+
+\affil{\textsuperscript{1}Instituto Politécnico Nacional, Centro de Investigación en Computación, Ciudad de México 07700, Mexico}
+\affil{\textsuperscript{2}Instituto Politécnico Nacional, Escuela Superior de Física y Matemáticas, Ciudad de México 07700, Mexico}
 
 \maketitle
 
 \begin{abstract}
-This paper presents a comprehensive comparison between classical time series prediction models, such as ARIMA and Holt-Winters, and more advanced approaches based on neural networks, specifically Long Short-Term Memory (LSTM). Multiple datasets from different domains are evaluated with the aim of determining which model offers better performance in terms of accuracy and generalization ability. The results show that, while traditional models offer interpretability and are effective in certain situations, LSTM-based models outperform them in complex problems with long-term dependencies. Furthermore, the advantages and disadvantages of each approach are discussed based on computational requirements and the amount of data needed for effective training. This study provides a practical guide for selecting the appropriate model depending on the context and the available data.
+This paper presents a comprehensive comparison between classical time series prediction models, such as ARIMA, and more advanced approaches based on neural networks, specifically Long Short-Term Memory (LSTM) applied to solar generation data. Multiple datasets from different domains are evaluated with the aim of determining which model offers better performance in terms of accuracy and generalization ability. The results show that, while traditional models offer interpretability and are effective in certain situations, LSTM-based models outperform them in complex problems with long-term dependencies. Furthermore, the advantages and disadvantages of each approach are discussed based on computational requirements and the amount of data needed for effective training. This study provides a practical guide for selecting the appropriate model depending on the context and the available data.
 \end{abstract}
 
 \section{Introduction}
@@ -36,12 +34,68 @@ In recent years, more advanced methods based on neural networks, particularly Lo
 This study aims to compare the performance of traditional time series models and LSTM networks in forecasting SPV energy output. By evaluating these models on real-world datasets, we seek to identify the advantages and limitations of each approach, providing insights into their applicability for energy forecasting in renewable energy systems.
 
 \section{Related Work}
+Nowadays green power generation, such as SPV is becoming of great interest. Never-
+theless, there are some points to be considered when it comes to generate energy by this
+means and get connected to the grid. One problem is that solar photovoltaic generation
+is not constant; therefore, there is the need for a reliable photovoltaic power prediction,
+where clustering analysis is a first step. The authors in [1] propose a clustering analysis,
+which enhances the accuracy of the prediction model of RBF (Radial Basis Function)
+photovoltaic power. The method is divided into time series analysis method, artificial
+neural networks, support vector machine, etc. Then, meteorological information is fed
+to the RBF and the back propagation (BP) neural network in order to predict the pho-
+tovoltaic power generation. Although the method is quite accurate there are still some
+issues that need to be considered, for example, improve data processing, strengthening
+clusters analysis and enhancing extraction modes.  
+
+In [2] the authors search and propose a new methodology to classify data of off grid
+solar energy. They analyzed the curves of the voltage and current obtained from a pho-
+tovoltaic station formed of 24 solar panels for three years in order to understand the
+behavior of the energy obtained. They classified 5 types of situations which led to a
+better understanding of the solar station to develop robust prediction algorithms. For
+the study the authors divided the day into two, daytime taken as charge, and the dis-
+charge when there were no generation or sunlight. And instead of processing the whole
+curves that were produced during the day they took seven curves characeristics to train the algorithm. For pattern recognition, cluster search and database visualization,
+SOM (Self Organized Maps) was used.  
+
+Prediction of solar radiation is quite important for photovoltaic power generation. In
+[3] the authors propose the use of neural networks to model such prediction. The ro-
+bustness of the neural network depends on the type of data obtained from the photovol-
+taic network study. Then, the type of data used to train the neural network is important
+as well as the way this data is processed. Pre-processing and dividing the data gives a
+better approximation model. To pre-process the data usually clustering is used for train-
+ing a neural network. In their work, the authors proposed a prediction model for soiled
+photovoltaic modules, as it was observed that dust on the panels may lead to power loss of up to 30\%. They considered soil characteristics such as physical, chemical, or spec-
+tral properties and used specialized data processing techniques to improve the accuracy
+of prediction.  
+
+Connecting photovoltaic power into the electrical grid requires an accurate analysis
+and simulation as the power output fluctuation may have negative effects to the grid. In
+the work presented in [4], the ideal number of clusters for photovoltaic power patterns
+data is determined that would achieve the best results. Here, a combination of conven-
+tional clustering algorithms and bio-inspired optimization clustering algorithms was
+presented. Clustering of photovoltaic power patterns is realized by utilizing a pattern
+recognition methodology on historical data such as irradiance and ambient temperature
+for a couple of years.  
+
+Trying to predict solar radiation for photovoltaic power generation brings about the
+big problem that even small changes in weather conditions really affect radiation. That
+is why modelling forecasting is so important and will help in the determination of the
+best possible number of clusters. First, time forecasting is divided into different condi-
+tions so modelling can be applied to specific environments, at this point two processes
+are required: clustering and classification. Clustering (unsupervised process) consists
+in characterize and label the types of each time period in the training data. Classification
+(supervised process) identifies the category of a time period in the forecasting stage. In
+[5] the authors propose an enhanced solar data clustering, pattern recognition and fore-
+casting learning abilities simultaneously for an accurate weather forecasting. A cluster-
+ing method is developed that only uses global horizontal radiance. After that, pattern
+recognition identifies the cluster to which a forecasting day belongs with first few
+hour\'s data. Finally, a two-layer machine learning based multimodel forecasting frame-
+work is developed to strengthen learning abilities for the machine learning models.
 
 \section{Solar Photovoltaic Electricity Generation Prediction}
 In this section, the solar photovoltaic electricity generation plant installed at CIC-IPN
 is described, along with the electricity generation data that have been obtained since the
-activation of the SPV plant. Afterwards, time series forecasting of the collected data is per-
-formed and the results obtained are presented.
+activation of the SPV plant. Afterwards, time series forecasting of the collected data is performed and the results obtained are presented.
 
 \subsection{Solar Photovoltaic Plant}
 The data used were obtained from the solar photovoltaic (SPV) electricity generation
@@ -59,7 +113,7 @@ perature (°C), panel temperature (°C) and variables related to the electric cu
 
 Time series analysis involves examining data points collected or recorded at specific time intervals to identify patterns, trends, and relationships within the data. This type of analysis is crucial in various fields, including economics, finance, weather forecasting, and energy production, as it allows for modeling and predicting future outcomes based on historical data.
 
-A fundamental aspect of time series analysis is understanding the components that constitute a time series. These components typically include:
+A fundamental aspect of time series analysis is understanding the components that constitute a time series[6]. These components typically include:
 
 \begin{itemize}
     \item \textbf{Trend}: The long-term movement or direction in the data, indicating whether the series is increasing, decreasing, or remaining constant over time.
@@ -72,39 +126,25 @@ Identifying and analyzing these components help in building accurate models for 
 
 In the context of this study, time series analysis is pivotal for understanding the temporal patterns in solar photovoltaic (SPV) energy production. By analyzing the time series data of SPV output, we can develop models to predict future energy generation, which is essential for efficient energy planning and grid integration.
 
-\subsection{SARIMAX}
+\subsection{ARIMA}
 
-Time series analysis plays a crucial role in various fields such as economics, finance, and environmental studies. Among the many models developed for time series forecasting, the Seasonal Autoregressive Integrated Moving Average with eXogenous inputs (SARIMAX) model stands out for its flexibility and effectiveness in capturing different patterns within the data.
+The ARIMA (AutoRegressive Integrated Moving Average) model is one of the most widely used methodologies for time series analysis and forecasting. ARIMA combines three key components: the autoregressive (AR) model, the moving average (MA) model, and integration (I), which is used to transform a non-stationary series into a stationary one[7].
 
-The SARIMAX model extends the Autoregressive Integrated Moving Average (ARIMA) model by incorporating seasonal components and external regressors. The general form of the SARIMAX model can be expressed as:
+The AR component describes the dependence of the current values of the series on its past values. The MA component, on the other hand, models the dependence of current values on past errors. Finally, the integrated (I) part is used to difference the series, removing non-stationary trends.
 
-\begin{equation}
-Y_t = \phi_1 Y_{t-1} + \phi_2 Y_{t-2} + \ldots + \phi_p Y_{t-p} + \theta_1 \varepsilon_{t-1} + \theta_2 \varepsilon_{t-2} + \ldots + \theta_q \varepsilon_{t-q} + \varepsilon_t
-\end{equation}
+A significant advantage of the ARIMA model is its ability to adapt to univariate time series that exhibit non-stationary behavior without requiring complex transformations. Moreover, ARIMA has become a standard tool across various fields, from finance to engineering, due to its simplicity and effectiveness in forecasting.
 
-where:
-\begin{itemize}
-    \item \(Y_t\) is the value of the time series at time \(t\),
-    \item \(\phi_i\) are the autoregressive parameters,
-    \item \(\theta_i\) are the moving average parameters,
-    \item \(\varepsilon_t\) is a white noise error term,
-    \item \(p\) is the order of the autoregressive part,
-    \item \(q\) is the order of the moving average part.
-\end{itemize}
- 
-The seasonal aspect of the model is incorporated through the parameters \(P\), \(D\), and \(Q\), which represent the seasonal autoregressive order, the seasonal differencing order, and the seasonal moving average order, respectively. The SARIMAX model is thus denoted as:
+The ARIMA model can be mathematically expressed as ARIMA$(p,d,q)$, where $p$ is the order of the autoregressive component, $d$ is the number of differences applied to make the series stationary, and $q$ is the order of the moving average component. The general equation for an ARIMA model is as follows:
 
-\begin{equation}
-SARIMAX(p, d, q)(P, D, Q)_s
-\end{equation}
+\[
+y_t = c + \phi_1 y_{t-1} + \cdots + \phi_p y_{t-p} + \theta_1 \epsilon_{t-1} + \cdots + \theta_q \epsilon_{t-q} + \epsilon_t
+\]
 
-where \(s\) denotes the length of the seasonal cycle. 
-
-The ability of the SARIMAX model to accommodate both seasonal patterns and external variables makes it particularly powerful for forecasting applications. 
+where $y_t$ is the value observed at time $t$, $c$ is a constant, $\phi_i$ are the coefficients of the AR component, $\theta_j$ are the coefficients of the MA component, and $\epsilon_t$ is a random error term.
 
 \section{Deep Neural Networks}
 
-Neural networks have emerged as a powerful class of models for solving complex problems in various domains, including computer vision, natural language processing, and time series forecasting. Inspired by the biological neural networks in the human brain, artificial neural networks (ANNs) consist of interconnected nodes, or neurons, that process information in a layered architecture.
+Neural networks have emerged as a powerful class of models for solving complex problems in various domains, including computer vision, natural language processing, and time series forecasting. Inspired by the biological neural networks in the human brain, artificial neural networks (ANNs) consist of interconnected nodes, or neurons, that process information in a layered architecture[8].
 
 A typical neural network can be mathematically represented as follows:
 
@@ -141,7 +181,7 @@ Recent advancements in deep learning, particularly with the introduction of deep
 
 \subsection{LSTM}
 
-Long Short-Term Memory (LSTM) networks are a specialized type of recurrent neural network (RNN) designed to effectively capture long-range dependencies in sequential data. Traditional RNNs suffer from issues such as vanishing and exploding gradients, which make it difficult for them to learn long-term patterns. LSTMs address this limitation through their unique architecture, enabling them to retain information over extended periods.
+Long Short-Term Memory (LSTM) networks are a specialized type of recurrent neural network (RNN) designed to effectively capture long-range dependencies in sequential data. Traditional RNNs suffer from issues such as vanishing and exploding gradients, which make it difficult for them to learn long-term patterns. LSTMs address this limitation through their unique architecture, enabling them to retain information over extended periods[9].
 
 The LSTM unit consists of a cell state, along with three gates: the input gate, the forget gate, and the output gate. The cell state serves as the long-term memory, while the gates control the flow of information into and out of the cell. Mathematically, the operations of an LSTM cell at time step \(t\) can be described as follows:
 
@@ -177,7 +217,7 @@ The output gate \(o_t\) determines the next hidden state \(h_t\), which is influ
 
 The architecture of LSTM networks allows them to effectively learn from sequences where contextual information is spread over long intervals, making them particularly suitable for applications in natural language processing, time series forecasting, and more.
 
-\section{SPV Data Processing}
+\section{SPV Data Pre-Processing}
 The available data on SPV generation contains several details that need to be addressed before using it on any model. This section contains the taken steps to process the data in order for it to be ready to be used.
 
 \subsection{Complete Days}
@@ -192,110 +232,113 @@ It is worth noticing that some days have no NaN values at all, so this days are 
 By analyzing the data, the interval was found to be from 00:00 to 07:40 and from 17:35 to 23:55.
 
 \subsection{NaN Values for Relevant Variables}
-While it is true that for SARIMAX no further information is needed this is not the case for LSTM, and so relevant variables are selected to train this model. The way in which this variables were chosen is by their correlation with SPV generation. A correlation greater than 0.7 is going to be taken as relevant. The data starts off with 58 columns, once the correlation analysis was made this columns were reduced to 35. Following are the obtained correlations:
+While it is true that for SARIMAX no further information is needed this is not the case for LSTM, and so relevant variables are selected to train this model. The way in which this variables were chosen is by their correlation with SPV generation. A correlation greater than 0.7 is going to be taken as relevant. The data starts off with 58 columns, once the correlation analysis was made this columns were reduced to 35, which are listed (with their corresponding correlations) in Table 1.
 
 \begin{table}[H]
 \centering
+\caption{Correlations between columns}
 \begin{tabular}{ll}
 \toprule
 \textbf{Column} & \textbf{Correlation} \\
 \midrule
-Potencia reactiva | Symo 22.7-3 480 (Norte) & -0.85714 \\
-Potencia reactiva | Symo 22.7-3 480 (Sur) & -0.79278 \\
-Temperatura de módulo | Sensor Card / Box (1) & 0.908048 \\
-Corriente CC MPP1 | Symo 22.7-3 480 (1) & 0.964973 \\
-Energía MPP1 | Symo 22.7-3 480 (1) & 0.968674 \\
-Irradiación | Sensor Card / Box (1) & 0.98559 \\
-Corriente CC MPP2 | Symo 22.7-3 480 (1) & 0.987772 \\
-Corriente CA L2 | Symo 22.7-3 480 (1) & 0.990479 \\
-Rendimiento específico | Symo 22.7-3 480 (1) & 0.990489 \\
-Energía | Symo 22.7-3 480 (1) & 0.990489 \\
-Potencia aparente | Symo 22.7-3 480 (1) & 0.990489 \\
-Corriente CA L1 | Symo 22.7-3 480 (1) & 0.990547 \\
-Corriente CA L3 | Symo 22.7-3 480 (1) & 0.990605 \\
-Energía MPP2 | Symo 22.7-3 480 (1) & 0.991791 \\
-Corriente CC MPP2 | Symo 22.7-3 480 (Sur) & 0.996317 \\
-Corriente CA L1 | Symo 22.7-3 480 (Sur) & 0.99654 \\
-Corriente CA L3 | Symo 22.7-3 480 (Sur) & 0.99655 \\
-Corriente CA L2 | Symo 22.7-3 480 (Sur) & 0.996572 \\
-Corriente CC MPP1 | Symo 22.7-3 480 (Sur) & 0.996627 \\
-Energía MPP2 | Symo 22.7-3 480 (Sur) & 0.997757 \\
-Corriente CC MPP1 | Symo 22.7-3 480 (Norte) & 0.997762 \\
-Corriente CC MPP2 | Symo 22.7-3 480 (Norte) & 0.99782 \\
-Potencia aparente | Symo 22.7-3 480 (Sur) & 0.997929 \\
-Energía | Symo 22.7-3 480 (Sur) & 0.997982 \\
-Rendimiento específico | Symo 22.7-3 480 (Sur) & 0.997982 \\
-Energía MPP1 | Symo 22.7-3 480 (Sur) & 0.998017 \\
-Corriente CA L1 | Symo 22.7-3 480 (Norte) & 0.998059 \\
-Corriente CA L3 | Symo 22.7-3 480 (Norte) & 0.998069 \\
-Corriente CA L2 | Symo 22.7-3 480 (Norte) & 0.998071 \\
-Energía MPP1 | Symo 22.7-3 480 (Norte) & 0.998143 \\
-Potencia aparente | Symo 22.7-3 480 (Norte) & 0.998404 \\
-Rendimiento específico | Symo 22.7-3 480 (Norte) & 0.998456 \\
-Energía | Symo 22.7-3 480 (Norte) & 0.998456 \\
-Energía MPP2 | Symo 22.7-3 480 (Norte) & 0.998593 \\
-Producción fotovoltaica & 1.0 \\
+Reactive Power | Symo 22.7-3 480 (North) & -0.85714 \\
+Reactive Power | Symo 22.7-3 480 (South) & -0.79278 \\
+Module Temperature | Sensor Card / Box (1) & 0.908048 \\
+DC Current MPP1 | Symo 22.7-3 480 (1) & 0.964973 \\
+Energy MPP1 | Symo 22.7-3 480 (1) & 0.968674 \\
+Irradiance | Sensor Card / Box (1) & 0.98559 \\
+DC Current MPP2 | Symo 22.7-3 480 (1) & 0.987772 \\
+AC Current L2 | Symo 22.7-3 480 (1) & 0.990479 \\
+Specific Yield | Symo 22.7-3 480 (1) & 0.990489 \\
+Energy | Symo 22.7-3 480 (1) & 0.990489 \\
+Apparent Power | Symo 22.7-3 480 (1) & 0.990489 \\
+AC Current L1 | Symo 22.7-3 480 (1) & 0.990547 \\
+AC Current L3 | Symo 22.7-3 480 (1) & 0.990605 \\
+Energy MPP2 | Symo 22.7-3 480 (1) & 0.991791 \\
+DC Current MPP2 | Symo 22.7-3 480 (South) & 0.996317 \\
+AC Current L1 | Symo 22.7-3 480 (South) & 0.99654 \\
+AC Current L3 | Symo 22.7-3 480 (South) & 0.99655 \\
+AC Current L2 | Symo 22.7-3 480 (South) & 0.996572 \\
+DC Current MPP1 | Symo 22.7-3 480 (South) & 0.996627 \\
+Energy MPP2 | Symo 22.7-3 480 (South) & 0.997757 \\
+DC Current MPP1 | Symo 22.7-3 480 (North) & 0.997762 \\
+DC Current MPP2 | Symo 22.7-3 480 (North) & 0.99782 \\
+Apparent Power | Symo 22.7-3 480 (South) & 0.997929 \\
+Energy | Symo 22.7-3 480 (South) & 0.997982 \\
+Specific Yield | Symo 22.7-3 480 (South) & 0.997982 \\
+Energy MPP1 | Symo 22.7-3 480 (South) & 0.998017 \\
+AC Current L1 | Symo 22.7-3 480 (North) & 0.998059 \\
+AC Current L3 | Symo 22.7-3 480 (North) & 0.998069 \\
+AC Current L2 | Symo 22.7-3 480 (North) & 0.998071 \\
+Energy MPP1 | Symo 22.7-3 480 (North) & 0.998143 \\
+Apparent Power | Symo 22.7-3 480 (North) & 0.998404 \\
+Specific Yield | Symo 22.7-3 480 (North) & 0.998456 \\
+Energy | Symo 22.7-3 480 (North) & 0.998456 \\
+Energy MPP2 | Symo 22.7-3 480 (North) & 0.998593 \\
+Photovoltaic Production & 1.0 \\
+
 \bottomrule
 \end{tabular}
-\caption{Correlations between columns}
 \label{tab:correlations}
 \end{table}
 
-This columns also contain NaN values in the following proportions
+This columns also contain NaN values which proportions are presented in table 2
 \begin{table}[H] % Usar el modificador H
 \centering
+\caption{NaN percentage for relevant columns}
 \begin{tabular}{ll}
 \toprule
 \textbf{Column} & \textbf{NaN Percentage} \\
 \midrule
-Producción fotovoltaica & 0.000000 \\
-Corriente CC MPP1 | Symo 22.7-3 480 (1) & 0.065975 \\
-Energía MPP1 | Symo 22.7-3 480 (1) & 0.065975 \\
-Corriente CC MPP2 | Symo 22.7-3 480 (1) & 0.065975 \\
-Corriente CA L2 | Symo 22.7-3 480 (1) & 0.065975 \\
-Rendimiento específico | Symo 22.7-3 480 (1) & 0.065975 \\
-Energía | Symo 22.7-3 480 (1) & 0.065975 \\
-Potencia aparente | Symo 22.7-3 480 (1) & 0.065975 \\
-Corriente CA L1 | Symo 22.7-3 480 (1) & 0.065975 \\
-Corriente CA L3 | Symo 22.7-3 480 (1) & 0.065975 \\
-Energía MPP2 | Symo 22.7-3 480 (1) & 0.065975 \\
-Temperatura de módulo | Sensor Card / Box (1) & 0.459484 \\
-Irradiación | Sensor Card / Box (1) & 0.459484 \\
-Corriente CC MPP1 | Symo 22.7-3 480 (Sur) & 0.460598 \\
-Corriente CA L3 | Symo 22.7-3 480 (Sur) & 0.460598 \\
-Corriente CA L2 | Symo 22.7-3 480 (Sur) & 0.460598 \\
-Corriente CC MPP2 | Symo 22.7-3 480 (Sur) & 0.460598 \\
-Corriente CA L1 | Symo 22.7-3 480 (Sur) & 0.460598 \\
-Energía | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Rendimiento específico | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Potencia aparente | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Energía MPP1 | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Corriente CA L2 | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Corriente CA L3 | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Corriente CA L1 | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Potencia reactiva | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Corriente CC MPP2 | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Corriente CC MPP1 | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Energía MPP2 | Symo 22.7-3 480 (Norte) & 0.461847 \\
-Energía | Symo 22.7-3 480 (Sur) & 0.463427 \\
-Potencia aparente | Symo 22.7-3 480 (Sur) & 0.463427 \\
-Energía MPP2 | Symo 22.7-3 480 (Sur) & 0.463427 \\
-Potencia reactiva | Symo 22.7-3 480 (Sur) & 0.463427 \\
-Rendimiento específico | Symo 22.7-3 480 (Sur) & 0.463427 \\
-Energía MPP1 | Symo 22.7-3 480 (Sur) & 0.463427 \\
+Photovoltaic Production & 0.000000 \\
+DC Current MPP1 | Symo 22.7-3 480 (1) & 0.065975 \\
+Energy MPP1 | Symo 22.7-3 480 (1) & 0.065975 \\
+DC Current MPP2 | Symo 22.7-3 480 (1) & 0.065975 \\
+AC Current L2 | Symo 22.7-3 480 (1) & 0.065975 \\
+Specific Yield | Symo 22.7-3 480 (1) & 0.065975 \\
+Energy | Symo 22.7-3 480 (1) & 0.065975 \\
+Apparent Power | Symo 22.7-3 480 (1) & 0.065975 \\
+AC Current L1 | Symo 22.7-3 480 (1) & 0.065975 \\
+AC Current L3 | Symo 22.7-3 480 (1) & 0.065975 \\
+Energy MPP2 | Symo 22.7-3 480 (1) & 0.065975 \\
+Module Temperature | Sensor Card / Box (1) & 0.459484 \\
+Irradiance | Sensor Card / Box (1) & 0.459484 \\
+DC Current MPP1 | Symo 22.7-3 480 (South) & 0.460598 \\
+AC Current L3 | Symo 22.7-3 480 (South) & 0.460598 \\
+AC Current L2 | Symo 22.7-3 480 (South) & 0.460598 \\
+DC Current MPP2 | Symo 22.7-3 480 (South) & 0.460598 \\
+AC Current L1 | Symo 22.7-3 480 (South) & 0.460598 \\
+Energy | Symo 22.7-3 480 (North) & 0.461847 \\
+Specific Yield | Symo 22.7-3 480 (North) & 0.461847 \\
+Apparent Power | Symo 22.7-3 480 (North) & 0.461847 \\
+Energy MPP1 | Symo 22.7-3 480 (North) & 0.461847 \\
+AC Current L2 | Symo 22.7-3 480 (North) & 0.461847 \\
+AC Current L3 | Symo 22.7-3 480 (North) & 0.461847 \\
+AC Current L1 | Symo 22.7-3 480 (North) & 0.461847 \\
+Reactive Power | Symo 22.7-3 480 (North) & 0.461847 \\
+DC Current MPP2 | Symo 22.7-3 480 (North) & 0.461847 \\
+DC Current MPP1 | Symo 22.7-3 480 (North) & 0.461847 \\
+Energy MPP2 | Symo 22.7-3 480 (North) & 0.461847 \\
+Energy | Symo 22.7-3 480 (South) & 0.463427 \\
+Apparent Power | Symo 22.7-3 480 (South) & 0.463427 \\
+Energy MPP2 | Symo 22.7-3 480 (South) & 0.463427 \\
+Reactive Power | Symo 22.7-3 480 (South) & 0.463427 \\
+Specific Yield | Symo 22.7-3 480 (South) & 0.463427 \\
+Energy MPP1 | Symo 22.7-3 480 (South) & 0.463427 \\
+
 \bottomrule
 \end{tabular}
-\caption{NaN percentage for relevant columns}
 \label{tab:nan_percentages}
 \end{table}
 
-This NaN values are imputed using a forward-fill algorithm, which imputes NaN values with the last (non NaN value) observed in the data. For this to function, the first NaN values of each day needs to be set to 0. Descriptive statistics of some columns can be observed in the following table
+This NaN values are imputed using a forward-fill algorithm, which imputes NaN values with the last (non NaN value) observed in the data. For this to function, the first NaN values of each day needs to be set to 0. Descriptive statistics of some columns can be observed in Table 3
 
 \begin{table}[H]
     \centering
+    \caption{Descriptive statistics for some relevant columns}
     \begin{tabular}{l p{2.5cm} p{2.5cm} p{2.5cm} p{2.5cm} p{2.5cm}}
         \toprule
-        & \textbf{Potencia reactiva | Symo 22.7-3 480 (Norte)} & \textbf{Potencia reactiva | Symo 22.7-3 480 (Sur)} & \textbf{Temperatura de módulo | Sensor Card / Box (1)} & \textbf{Irradiación | Sensor Card / Box (1)} & \textbf{Energía | Symo 22.7-3 480 (1)} \\
+        & \textbf{Reactive Power | Symo 22.7-3 480 (North)} & \textbf{Reactive Power | Symo 22.7-3 480 (South)} & \textbf{Module Temperature | Sensor Card / Box (1)} & \textbf{Irradiance | Sensor Card / Box (1)} & \textbf{Energy | Symo 22.7-3 480 (1)} \\
         \midrule
         count & 317088.000000 & 317088.000000 & 317088.000000 & 317088.000000 & 317088.000000 \\
         mean & -7.953227 & -3.132833 & 25.812104 & 199.773331 & 204.156066 \\
@@ -307,23 +350,24 @@ This NaN values are imputed using a forward-fill algorithm, which imputes NaN va
         max & 62.240000 & 75.130000 & 63.000000 & 1255.000000 & 1634.775880 \\
         \bottomrule
     \end{tabular}
-   \caption{Descriptive statistics for some relevant columns}
 \end{table}
 
 \subsection{Results of Processing}
-At the end of the processing, the data is ready to be used in the SARIMAX and LSTM models. As a side note, interesting things came up from this process. The first thing that can be noticed is that the data is fairly distributed between months as it can be seen in the following graph.
+At the end of the processing, the data is ready to be used in the SARIMAX and LSTM models. As a side note, interesting things came up from this process. The first thing that can be noticed is that the data is fairly distributed between months as it can be seen in Figure 1.
 
 \begin{figure}[H] % [H] coloca la imagen exactamente en el lugar donde aparece en el texto
     \centering % Centra la imagen
-    \includegraphics[height=0.40\textwidth]{conteo.png} % Ajusta el ancho de la imagen
     \caption{Number of days in each season of the year} % Leyenda de la imagen
+    \includegraphics[height=0.40\textwidth]{conteo.png} % Ajusta el ancho de la imagen
     \label{fig:etiqueta_imagen} % Etiqueta para referirse a la imagen en el texto
 \end{figure}
 
+Furthermore, seasonal mean production of the obtained data can be observed in Figure 2.
+
 \begin{figure}[H] % [H] coloca la imagen exactamente en el lugar donde aparece en el texto
     \centering % Centra la imagen
-    \includegraphics[width=1\textwidth]{temporada.png} % Ajusta el ancho de la imagen
     \caption{Mean production by day and season of the year} % Leyenda de la imagen
+    \includegraphics[width=1\textwidth]{temporada.png} % Ajusta el ancho de la imagen
     \label{fig:etiqueta_imagen} % Etiqueta para referirse a la imagen en el texto
 \end{figure}
 
@@ -332,15 +376,16 @@ As the data is ready to be used in models, this section takes on the performed t
 
 \begin{figure}[H] % [H] coloca la imagen exactamente en el lugar donde aparece en el texto
     \centering % Centra la imagen
-    \includegraphics[height=0.35\textwidth]{tendays.png} % Ajusta el ancho de la imagen
     \caption{First ten days of SPV generation} % Leyenda de la imagen
+    \includegraphics[height=0.35\textwidth]{tendays.png} % Ajusta el ancho de la imagen
     \label{fig:etiqueta_imagen} % Etiqueta para referirse a la imagen en el texto
 \end{figure} 
 
-Performing a augmented Dickey-Fuller test shows the following results
+Performing a augmented Dickey-Fuller test results can be seen in Table 4.
 
 \begin{table}[H]
     \centering
+    \caption{Descriptive statistics for some relevant columns}
     \begin{tabular}{>{\raggedright\arraybackslash}p{5cm} p{5cm}} % Ajusta el ancho de las columnas según sea necesario
         \toprule
         \textbf{Values} & \textbf{Metric} \\
@@ -357,12 +402,12 @@ Performing a augmented Dickey-Fuller test shows the following results
     \caption{Dickey-Fuller test results}
 \end{table}
 
-From this values we can observe that the time series is stationary since the p-value is not greater than 5\%, this can also be observed in the following time series decomposition
+From this values we can observe that the time series is stationary since the p-value is not greater than 5\%, this can also be observed in the time series decomposition in Figure 4.
 
 \begin{figure}[H] % [H] coloca la imagen exactamente en el lugar donde aparece en el texto
     \centering % Centra la imagen
-    \includegraphics[width=1\textwidth]{decomposition.png} % Ajusta el ancho de la imagen
     \caption{Time series decomposition of the SPV generation time series} % Leyenda de la imagen
+    \includegraphics[width=1\textwidth]{decomposition.png} % Ajusta el ancho de la imagen
     \label{fig:etiqueta_imagen} % Etiqueta para referirse a la imagen en el texto
 \end{figure} 
 
@@ -387,7 +432,7 @@ After fitting the ARIMA model the following results can be observed.
     \label{fig:etiqueta_imagen} % Etiqueta para referirse a la imagen en el texto
 \end{figure} 
 
-By comparing the test set and the ARIMA predictions a MSE of 143068.8 can be found.
+The results of the time series forecasting model demonstrated a mean squared error (MSE) of 143,068.8. While this value indicates the model's ability to capture the underlying patterns of the data, it also suggests there is room for improvement in terms of accuracy. Factors such as model complexity, feature selection, and parameter tuning could be further optimized to reduce prediction error. Overall, the results confirm the model's potential but highlight the need for more refined approaches to achieve better forecasting performance.
 
 \section{LSTM}
 Training the LSTM model follows the train/test. The LSTM model is configured with RELU as activation function, the model was trained for 100 epochs and a batch size of 128. The results can be seen on the following graph
@@ -399,17 +444,44 @@ Training the LSTM model follows the train/test. The LSTM model is configured wit
     \label{fig:etiqueta_imagen} % Etiqueta para referirse a la imagen en el texto
 \end{figure} 
 
-By comparing the test set and the ARIMA predictions a MSE of 571.8 can be found.
+The implementation of the Long Short-Term Memory (LSTM) model yielded a mean squared error (MSE) of 571.8, demonstrating a significant improvement in forecasting accuracy compared to traditional methods. This low error indicates that the LSTM effectively captured the temporal dependencies and complex patterns inherent in the data. The results underscore the strength of LSTM networks in handling sequential data, making them a powerful tool for time series forecasting. However, there remains an opportunity to enhance model performance further through techniques such as hyperparameter optimization, regularization, and incorporating additional features.
+
+\section{Conclusion and Future Work}
+This paper presented a comparative analysis of time series forecasting methods, highlighting the effectiveness of Long Short-Term Memory (LSTM) networks in capturing complex temporal patterns. The traditional time series forecasting model achieved a mean squared error (MSE) of 143,068.8, illustrating the inherent challenges in accurately predicting outcomes based on historical data. In contrast, the LSTM model demonstrated a substantial improvement with an MSE of 571.8, showcasing its capability to learn long-range dependencies and effectively handle sequential data.
+
+These results underscore the advantages of using LSTM networks for time series forecasting, particularly in scenarios where data exhibits intricate patterns and correlations over time. While the LSTM model showed promising accuracy, there remains potential for further enhancement through hyperparameter tuning and the integration of additional features.
+
+Future research should focus on refining these models and exploring hybrid approaches that combine the strengths of both traditional and advanced techniques. By continuing to improve forecasting accuracy, we can enhance decision-making processes across various applications, from finance to resource management.
+
 
 \begin{thebibliography}{99}
 \bibitem{referencia1}
-Box, G. E. P., Jenkins, G. M., \& Reinsel, G. C. (2015). Time Series Analysis: Forecasting and Control. Wiley.
+Si J., Cai Y., Wang Y., Liu H., Song W., Liu Q., Su X., and Ren J. "Piecewise Clustering Prediction Model of Distributed Photovoltaic Power Based on Principal Component Analysis", 2021 IEEE IAS Industrial and Commercial Power System Asia, pp. 437-443, July 2021.
 
 \bibitem{referencia2}
-Hyndman, R. J., \& Athanasopoulos, G. (2018). Forecasting: Principles and Practice. OTexts.
+Sanz-Gorrachategui P., Pastor-Flores A., Guillén-Asensio J.S., Artal-Sevil A., Bono-Nuez
+B., Martín-del-Brío C., and Bernal-Ruiz C. "Unsupervised clustering of battery waveforms in off grid PV installations", 2020 Fifteenth International Conference on Ecological Vehicles and Renewable Energies (EVER).
 
 \bibitem{referencia3}
+Pulipaka S. and Kumar R. "Power prediction of soiled PV module with neural networks using hybrid data clustering and division techniques", Solar Energy vol. 133 (2016), pp. 485-500
+
+\bibitem{referencia4}
+Munshi A. and Mohamed Y. "Photovoltaic power pattern clustering based on conventional and swarm clustering methods", Solar Energy vol. 124 (2016),pp.39-56
+
+\bibitem{referencia5}
+Feng C., Cui M., Hodge B., Lu S., Hamann H. and Zhang J. "Unsupervised Clustering-Based Short Term Solar Forecasting", IEEE Transactions on Sustainable Energy, vol. 10, no.4, October 2019
+
+\bibitem{referencia6}
+Chatfield, C. (2003). The Analysis of Time Series: An Introduction (6th ed.). Chapman \& Hall/CRC.
+
+\bibitem{referencia7}
+Box, G. E. P., Jenkins, G. M., Reinsel, G. C., \& Ljung, G. M. (2015). Time Series Analysis: Forecasting and Control (5th ed.). Wiley.
+
+\bibitem{referencia8}
 Goodfellow, I., Bengio, Y., \& Courville, A. (2016). Deep Learning. MIT Press.
+
+\bibitem{referencia9}
+Hochreiter, S., and Schmidhuber, J. "Long Short-Term Memory", Neural Computation, vol. 9, no. 8 (1997), pp. 1735-1780.
 
 \end{thebibliography}
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.19)  19 SEP 2024 20:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.9.19)  22 SEP 2024 21:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -314,9 +314,17 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@dimlist=\toks25
 
 (C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/latex/preprint\authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip54
+\@affilsep=\skip55
+\c@Maxaffil=\count292
+\c@authors=\count293
+\c@affil=\count294
+)
 (C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count292
+\c@float@type=\count295
 \float@exts=\toks26
 \float@box=\box53
 \@float@everytoks=\toks27
@@ -328,14 +336,14 @@ Package: array 2023/10/16 v2.5g Tabular extension package (FMi)
 \ar@mcellbox=\box55
 \extrarowheight=\dimen178
 \NC@list=\toks28
-\extratabsurround=\skip54
-\backup@length=\skip55
+\extratabsurround=\skip56
+\backup@length=\skip57
 \ar@cellbox=\box56
 )
 (C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
 ex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count293
+\l__color_backend_stack_int=\count296
 \l__pdf_internal_box=\box57
 ) (paper.aux
 
@@ -359,38 +367,38 @@ LaTeX Warning: Label `fig:etiqueta_imagen' multiply defined.
 )
 \openout1 = `paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
-LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 14.
+LaTeX Font Info:    ... okay on input line 14.
 
 (C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
 i
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count294
+\scratchcounter=\count297
 \scratchdimen=\dimen179
 \scratchbox=\box58
-\nofMPsegments=\count295
-\nofMParguments=\count296
+\nofMPsegments=\count298
+\nofMParguments=\count299
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count297
+\MPscratchCnt=\count300
 \MPscratchDim=\dimen180
-\MPnumerator=\count298
-\makeMPintoPDFobject=\count299
+\MPnumerator=\count301
+\makeMPintoPDFobject=\count302
 \everyMPtoPDFconversion=\toks30
 )
 (C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
@@ -403,7 +411,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 g
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-Package hyperref Info: Link coloring OFF on input line 23.
+Package hyperref Info: Link coloring OFF on input line 14.
  (paper.out) (paper.out)
 \@outlinefile=\write3
 \openout3 = `paper.out'.
@@ -443,12 +451,12 @@ Package hyperref Info: Link coloring OFF on input line 23.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
 
 (C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
 
 
 (C:\Users\USER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
@@ -457,218 +465,213 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/USER/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Overfull \hbox (9.00381pt too wide) in paragraph at lines 79--80
-[]\OT1/cmr/m/n/12 The SARI-MAX model ex-tends the Au-tore-gres-sive In-te-grate
-d Mov-ing Av-er-age (ARIMA)
- []
-
-[3] [4] [5] [6] [7
+[3] [4] [5] [6] [7] [8
 pdfTeX warning (ext4): destination with the same identifier (name{table.1}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.291 
+l.333 
       ]
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-[]|\OT1/cmr/bx/n/12 Potencia
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]|\OT1/cmr/bx/n/12 Reactive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-\OT1/cmr/bx/n/12 re-ac-tiva
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+\OT1/cmr/bx/n/12 Power |
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-\OT1/cmr/bx/n/12 | Symo
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]|\OT1/cmr/bx/n/12 Reactive
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-\OT1/cmr/bx/n/12 22.7-3 480
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+\OT1/cmr/bx/n/12 Power |
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-[]|\OT1/cmr/bx/n/12 Potencia
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]|\OT1/cmr/bx/n/12 Module
  []
 
 
-Underfull \hbox (badness 2951) in paragraph at lines 298--298
-\OT1/cmr/bx/n/12 re-ac-tiva |
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+\OT1/cmr/bx/n/12 Tem-per-
  []
 
 
-Underfull \hbox (badness 1460) in paragraph at lines 298--298
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+\OT1/cmr/bx/n/12 a-ture |
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+\OT1/cmr/bx/n/12 Sen-sor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+[]|\OT1/cmr/bx/n/12 Irradiance
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--341
+\OT1/cmr/bx/n/12 | Sen-sor
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 341--342
+[]|\OT1/cmr/bx/n/12 Energy |
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 341--342
 \OT1/cmr/bx/n/12 Symo 22.7-
  []
 
 
-Overfull \hbox (5.47922pt too wide) in paragraph at lines 298--298
-[]|\OT1/cmr/bx/n/12 Temperatura
- []
-
-
-Underfull \hbox (badness 7451) in paragraph at lines 298--298
-\OT1/cmr/bx/n/12 de m^^Sodulo
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-\OT1/cmr/bx/n/12 | Sen-sor
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-[]|\OT1/cmr/bx/n/12 Irradiaci^^Son
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 298--298
-\OT1/cmr/bx/n/12 | Sen-sor
- []
-
-
-Underfull \hbox (badness 4543) in paragraph at lines 298--299
-[]|\OT1/cmr/bx/n/12 Energ^^S^^Pa |
- []
-
-
-Overfull \hbox (2.63124pt too wide) in paragraph at lines 300--300
+Overfull \hbox (2.63124pt too wide) in paragraph at lines 343--343
 []|\OT1/cmr/m/n/12 317088.000000| 
  []
 
 
-Overfull \hbox (2.63124pt too wide) in paragraph at lines 300--300
+Overfull \hbox (2.63124pt too wide) in paragraph at lines 343--343
 []|\OT1/cmr/m/n/12 317088.000000| 
  []
 
 
-Overfull \hbox (2.63124pt too wide) in paragraph at lines 300--300
+Overfull \hbox (2.63124pt too wide) in paragraph at lines 343--343
 []|\OT1/cmr/m/n/12 317088.000000| 
  []
 
 
-Overfull \hbox (2.63124pt too wide) in paragraph at lines 300--300
+Overfull \hbox (2.63124pt too wide) in paragraph at lines 343--343
 []|\OT1/cmr/m/n/12 317088.000000| 
  []
 
 
-Overfull \hbox (2.63124pt too wide) in paragraph at lines 300--301
+Overfull \hbox (2.63124pt too wide) in paragraph at lines 343--344
 []|\OT1/cmr/m/n/12 317088.000000| 
  []
 
 
-Overfull \hbox (3.08707pt too wide) in paragraph at lines 296--310
+Overfull \hbox (3.08707pt too wide) in paragraph at lines 339--353
  [][] 
  []
 
-[8
+[9
 pdfTeX warning (ext4): destination with the same identifier (name{table.2}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.312 
+l.354 
       ]
-<conteo.png, id=132, 426.09187pt x 325.215pt>
+<conteo.png, id=137, 426.09187pt x 325.215pt>
 File: conteo.png Graphic file (type png)
 <use conteo.png>
-Package pdftex.def Info: conteo.png  used on input line 318.
+Package pdftex.def Info: conteo.png  used on input line 361.
 (pdftex.def)             Requested size: 237.38751pt x 181.18439pt.
-<temporada.png, id=134, 1120.9378pt x 313.17pt>
+<temporada.png, id=139, 1120.9378pt x 313.17pt>
 File: temporada.png Graphic file (type png)
 <use temporada.png>
-Package pdftex.def Info: temporada.png  used on input line 325.
+Package pdftex.def Info: temporada.png  used on input line 370.
 (pdftex.def)             Requested size: 452.9679pt x 126.55121pt.
- [9
+ [10
 pdfTeX warning (ext4): destination with the same identifier (name{table.3}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.329 
+l.373 
       
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.329 
+l.373 
        <./conteo.png>]
-<tendays.png, id=142, 437.38406pt x 289.08pt>
+<tendays.png, id=147, 437.38406pt x 289.08pt>
 File: tendays.png Graphic file (type png)
 <use tendays.png>
-Package pdftex.def Info: tendays.png  used on input line 335.
+Package pdftex.def Info: tendays.png  used on input line 380.
 (pdftex.def)             Requested size: 239.87456pt x 158.54152pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 351--352
+Underfull \hbox (badness 10000) in paragraph at lines 396--397
 []|\OT1/cmr/m/n/12 Number of ob-ser-va-tions
  []
 
-<decomposition.png, id=143, 1062.21844pt x 291.33844pt>
+<decomposition.png, id=148, 1062.21844pt x 291.33844pt>
 File: decomposition.png Graphic file (type png)
 <use decomposition.png>
-Package pdftex.def Info: decomposition.png  used on input line 364.
+Package pdftex.def Info: decomposition.png  used on input line 410.
 (pdftex.def)             Requested size: 452.9679pt x 124.23729pt.
-[10
+[11
 pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.368 
-      
+l.412 \end{figure}
+                  
 pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.368 
-      
+l.412 \end{figure}
+                  
 pdfTeX warning (ext4): destination with the same identifier (name{table.4}) has
  been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.368 
-       <./temporada.png> <./tendays.png>]
-<traintest.png, id=153, 422.32782pt x 307.1475pt>
+l.412 \end{figure}
+                  
+pdfTeX warning (ext4): destination with the same identifier (name{table.5}) has
+ been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.412 \end{figure}
+                   <./temporada.png> <./tendays.png>]
+<traintest.png, id=159, 422.32782pt x 307.1475pt>
 File: traintest.png Graphic file (type png)
 <use traintest.png>
-Package pdftex.def Info: traintest.png  used on input line 376.
+Package pdftex.def Info: traintest.png  used on input line 421.
 (pdftex.def)             Requested size: 217.99423pt x 158.54152pt.
-<ARIMA.png, id=154, 420.82219pt x 304.88907pt>
+<ARIMA.png, id=160, 420.82219pt x 304.88907pt>
 File: ARIMA.png Graphic file (type png)
 <use ARIMA.png>
-Package pdftex.def Info: ARIMA.png  used on input line 385.
+Package pdftex.def Info: ARIMA.png  used on input line 430.
 (pdftex.def)             Requested size: 218.8352pt x 158.54152pt.
- [11
+ [12
 pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.392 \section
-              {LSTM}
+l.434 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.5}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.392 \section
-              {LSTM}
+l.434 
+       <./decomposition.png> <./traintest.png>]
+<LSTM.png, id=169, 424.58624pt x 304.88907pt>
+File: LSTM.png Graphic file (type png)
+<use LSTM.png>
+Package pdftex.def Info: LSTM.png  used on input line 442.
+(pdftex.def)             Requested size: 220.79259pt x 158.54152pt.
+ [13
 pdfTeX warning (ext4): destination with the same identifier (name{figure.6}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.392 \section
-              {LSTM} <./decomposition.png> <./traintest.png> <./ARIMA.png>]
-<LSTM.png, id=165, 424.58624pt x 304.88907pt>
-File: LSTM.png Graphic file (type png)
-<use LSTM.png>
-Package pdftex.def Info: LSTM.png  used on input line 397.
-(pdftex.def)             Requested size: 220.79259pt x 158.54152pt.
-
-[12
+l.448 
+      
 pdfTeX warning (ext4): destination with the same identifier (name{figure.7}) ha
 s been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   \__shipout_drop_firstpage_...
-l.416 \end{document}
-                     <./LSTM.png>] (paper.aux)
+l.448 
+       <./ARIMA.png> <./LSTM.png>] [14] [15] (paper.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
@@ -678,16 +681,16 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `paper.out' has not changed.
-(rerunfilecheck)             Checksum: BF6F6A0767D8DBFE39FFD6B953833DDD;2557.
+(rerunfilecheck)             Checksum: 0DB140259EBACB9A4611D6CF5240014D;2750.
  ) 
 Here is how much of TeX's memory you used:
- 10440 strings out of 474485
- 160419 string characters out of 5744206
- 1942542 words of memory out of 5000000
- 32543 multiletter control sequences out of 15000+600000
- 568124 words of font info for 74 fonts, out of 8000000 for 9000
+ 10544 strings out of 474485
+ 161861 string characters out of 5744206
+ 1941542 words of memory out of 5000000
+ 32635 multiletter control sequences out of 15000+600000
+ 567777 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,11n,79p,914b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,10n,79p,930b,559s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <C:\Users\USER\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1
 200.pk><C:/Users/USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/
@@ -703,11 +706,10 @@ sers/USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb
 ><C:/Users/USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 sy10.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
 ts/cm/cmsy6.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb><C:/Users/USER/AppData/Local/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmti12.pfb>
-Output written on paper.pdf (12 pages, 654425 bytes).
+/amsfonts/cm/cmsy8.pfb>
+Output written on paper.pdf (15 pages, 647097 bytes).
 PDF statistics:
- 254 PDF objects out of 1000 (max. 8388607)
- 55 named destinations out of 1000 (max. 500000)
- 172 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 64 named destinations out of 1000 (max. 500000)
+ 180 words of extra memory for PDF output out of 10000 (max. 10000000)
 
